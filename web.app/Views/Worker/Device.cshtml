@@ -1,0 +1,26 @@
+﻿<div class="modal-header border-bottom-0 pb-2">
+	<div class="modal-title">
+		@Model.Id
+	</div>
+	<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<form method="post" data-bs-modal="ajax" asp-action="device" autocomplete="off">
+	<input type="hidden" name="id" value="@Model.Id" />
+	<div class="modal-body">
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" name="group" value="@Model.Group" />
+			<label>分组</label>
+		</div>	
+		<div class="form-floating">
+			<input type="text" class="form-control" name="note" value="@Model.Note" />
+			<label>备注</label>
+		</div>
+	</div>
+	<div class="modal-footer border-top-0 pt-0">
+		<div class="form-check">
+			<input name="recyclebin" value="true" type="checkbox" class="form-check-input" />
+			<label class="form-check-label">移到回收站</label>
+		</div>
+		<button type="submit" class="btn btn-lg btn-primary">提交</button>
+	</div>
+</form>

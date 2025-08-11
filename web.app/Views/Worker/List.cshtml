@@ -1,0 +1,17 @@
+﻿@foreach (CustomClientContext item in Model) {
+    <tr>
+        <td class="text-truncate">@item.Id</td>
+        <td class="text-truncate">@item.OSInformation.MachineName</td>
+        <td>@Html.Raw(string.Join("&nbsp;", item.OSInformation.GPU.Select(x => $"<span class=\"badge text-bg-warning\">{x}</span>") ?? []))</td>
+        <td class="text-truncate">@item.OSInformation.CPU</td>
+        <td class="text-truncate">@item.Note</td>
+        <td class="text-truncate">
+            <div class="btn-group btn-group-sm">
+                <button class="btn btn-secondary" onclick="onCommandClick(this,'@item.Id','1')">RDP</button>
+                <button class="btn btn-secondary" onclick="onCommandClick(this,'@item.Id','3')">CMD</button>
+                <button class="btn btn-warning" onclick="onCommandClick(this,'@item.Id', '255')">RESTART</button>
+                <a asp-action="device" asp-route-id="@item.Id" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#remote-modal">Settings</a>
+            </div>
+        </td>
+    </tr>
+}

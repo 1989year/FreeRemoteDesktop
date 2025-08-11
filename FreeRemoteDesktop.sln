@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36401.2 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APTs", "APTs\APTs.csproj", "{A7982E6A-EB96-BDC0-A459-43A7DC186847}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APTs.Core", "APTs.Core\APTs.Core.csproj", "{2143F894-99B6-16C9-1A93-3D2CEA7E7A1A}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CustomWebSocket", "CustomWebSocket\CustomWebSocket.shproj", "{481BAEE4-DA17-4433-B051-2E6933B43F41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "desktop", "desktop\desktop.csproj", "{50389274-D359-AD14-FD72-986B1E2F1314}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "web.app", "web.app\web.app.csproj", "{3237F288-7CB8-A03E-5B13-27696AA3DCD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shell", "shell\shell.csproj", "{C7824A41-67BC-231E-BCC0-458E1B4200A9}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CustomWebSocketRelay", "CustomWebSocketRelay\CustomWebSocketRelay.shproj", "{9E75AD23-60E3-48B8-A0B5-BD7D939A6881}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7982E6A-EB96-BDC0-A459-43A7DC186847}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7982E6A-EB96-BDC0-A459-43A7DC186847}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7982E6A-EB96-BDC0-A459-43A7DC186847}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7982E6A-EB96-BDC0-A459-43A7DC186847}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2143F894-99B6-16C9-1A93-3D2CEA7E7A1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2143F894-99B6-16C9-1A93-3D2CEA7E7A1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2143F894-99B6-16C9-1A93-3D2CEA7E7A1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2143F894-99B6-16C9-1A93-3D2CEA7E7A1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50389274-D359-AD14-FD72-986B1E2F1314}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50389274-D359-AD14-FD72-986B1E2F1314}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50389274-D359-AD14-FD72-986B1E2F1314}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50389274-D359-AD14-FD72-986B1E2F1314}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3237F288-7CB8-A03E-5B13-27696AA3DCD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3237F288-7CB8-A03E-5B13-27696AA3DCD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3237F288-7CB8-A03E-5B13-27696AA3DCD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3237F288-7CB8-A03E-5B13-27696AA3DCD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7824A41-67BC-231E-BCC0-458E1B4200A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7824A41-67BC-231E-BCC0-458E1B4200A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7824A41-67BC-231E-BCC0-458E1B4200A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7824A41-67BC-231E-BCC0-458E1B4200A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75C6B886-5CD2-49B8-BC77-88E597809BE0}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		CustomWebSocketRelay\CustomWebSocketRelay.projitems*{2143f894-99b6-16c9-1a93-3d2cea7e7a1a}*SharedItemsImports = 5
+		CustomWebSocket\CustomWebSocket.projitems*{2143f894-99b6-16c9-1a93-3d2cea7e7a1a}*SharedItemsImports = 5
+		CustomWebSocket\CustomWebSocket.projitems*{3237f288-7cb8-a03e-5b13-27696aa3dcd6}*SharedItemsImports = 5
+		CustomWebSocket\CustomWebSocket.projitems*{481baee4-da17-4433-b051-2e6933b43f41}*SharedItemsImports = 13
+		CustomWebSocketRelay\CustomWebSocketRelay.projitems*{50389274-d359-ad14-fd72-986b1e2f1314}*SharedItemsImports = 5
+		CustomWebSocketRelay\CustomWebSocketRelay.projitems*{9e75ad23-60e3-48b8-a0b5-bd7d939a6881}*SharedItemsImports = 13
+		CustomWebSocketRelay\CustomWebSocketRelay.projitems*{c7824a41-67bc-231e-bcc0-458e1b4200a9}*SharedItemsImports = 5
+	EndGlobalSection
+EndGlobal

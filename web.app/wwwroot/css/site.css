@@ -1,0 +1,7 @@
+* {
+    font-size: 20px;
+}
+
+.card, .dropdown-menu, .nav .nav-item .active, .list-group, .form-select, .toast, .pagination, .page-link, .alert, .btn-close, .form-check-input, .btn, .badge, .form-control, .input-group-text, .modal-content {
+    border-radius: 0 !important;
+}

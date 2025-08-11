@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html class="h-100">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/css/bootstrap.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body class="d-flex flex-column h-100">
+    <div class="modal modal-sheet position-static d-block bg-body-secondary" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content shadow">
+                <div class="modal-header">
+                    <h5 class="modal-title">@Context.Request.Host</h5>
+                </div>
+                <form method="post" data-bs-modal="ajax" asp-action="signin" autocomplete="off">
+                    <div class="modal-body">
+                        <div class="form-floating mb-3">
+                            <input type="email" name="email" class="form-control" required />
+                            <label>账号</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" name="pwd" class="form-control" required />
+                            <label>密码</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer border-top-0 pt-0">
+                        <button type="submit" class="btn btn-lg btn-primary">登录</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="~/js/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+    <script src="~/js/main.min.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

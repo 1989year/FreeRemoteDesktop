@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html class="h-100">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/css/bootstrap.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body class="d-flex flex-column h-100">
+    <nav class="navbar bg-body-tertiary bg-light-subtle shadow-sm sticky-top">
+        <div class="container-fluid">
+            <ul class="nav nav-underline">
+                <li class="nav-item">
+                    <a asp-action="index" asp-route-t="@Environment.TickCount64" class="nav-link px-3 @(string.IsNullOrWhiteSpace(ViewBag.Group) ? "active" : "")">
+                        全部设备
+                    </a>
+                </li>
+                @foreach (var item in ViewBag.Groups) {
+                    <li class="nav-item">
+                        <a asp-action="index" asp-route-group="@item" asp-route-t="@Environment.TickCount64" class="nav-link px-3 @(ViewBag.Group == item ? "active" : "")">
+                            @item
+                        </a>
+                    </li>
+                }
+            </ul>
+            <ul class="nav">
+              @*   <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="modal" data-bs-target="#remote-modal-xl" href="/system/settings/">
+                        <i class="bi bi-server"></i> 设置
+                    </a>
+                </li> *@
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="identity" asp-action="signout" asp-route-returnurl="/"><i class="bi bi-arrow-return-right"></i> 注销登录</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid mt-3">
+        <ul class="pagination">
+            @for (int i = 1; i <= ViewBag.Count; i++) {
+                <li class="page-item @(ViewBag.Page == i ? "active" : "")">
+                    <a class="page-link" asp-route-t="@Environment.TickCount64" asp-route-page="@i">@i</a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="container-fluid">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr class="table-active">
+                        <th class="text-truncate">标识</th>
+                        <th class="text-truncate">设备名</th>
+                        <th>图形处理器</th>
+                        <th class="text-truncate">中央处理器</th>
+                        <th class="text-truncate">备注</th>
+                        <th class="text-truncate"></th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <td colspan="6" class="text-center p-3">
+                            <div class="spinner-border" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="modal fade" id="remote-modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="d-flex justify-content-center p-5">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="remote-modal-lg" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="d-flex justify-content-center p-5">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/js/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+    <script src="~/js/main.min.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        $(() => {
+            var uri =  '/worker/list?page=@ViewBag.Page&group=@Uri.EscapeDataString(ViewBag.Group ?? string.Empty)';
+            document.querySelector('table tbody').loop(uri, 6000);
+            var sse = new EventSource('/sse?id=@(Context.Connection.Id)');
+            sse.onmessage = function (event) {
+                document.querySelector('table tbody').load(uri)
+            }
+        })
+    </script>
+</body>
+</html>
